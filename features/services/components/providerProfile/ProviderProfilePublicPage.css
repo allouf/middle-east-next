@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+.provider-profile-tabs .ant-tabs-nav {
+  margin-bottom: 32px !important;
+}
+
+.provider-profile-tabs .ant-tabs-nav::before {
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.provider-profile-tabs .ant-tabs-tab {
+  padding: 12px 0 !important;
+  margin: 0 32px 0 0 !important;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748B !important;
+}
+
+.provider-profile-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #00664F !important;
+}
+
+.provider-profile-tabs .ant-tabs-tab:hover {
+  color: #00664F !important;
+}
+
+.provider-profile-tabs .ant-tabs-ink-bar {
+  background: #00664F !important;
+  height: 2px !important;
+}
+
+/* Base styles for the provider profile */
+.provider-profile-container {
+  font-family: 'Cairo', sans-serif;
+}

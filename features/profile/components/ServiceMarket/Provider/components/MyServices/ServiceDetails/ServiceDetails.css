@@ -1,0 +1,38 @@
+/* Service Details Tabs Styling */
+.service-details-tabs .ant-tabs-tab {
+  color: #64748B !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.service-details-tabs .ant-tabs-tab:hover {
+  color: #00664F !important;
+}
+
+.service-details-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #00664F !important;
+  font-weight: 600;
+}
+
+.service-details-tabs .ant-tabs-ink-bar {
+  background: #00664F !important;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.service-details-tabs .ant-tabs-tab-btn {
+  color: inherit;
+}
+
+.service-details-tabs .ant-tabs-nav {
+  margin-bottom: 0;
+  justify-content: center;
+}
+
+.service-details-tabs .ant-tabs-nav-wrap {
+  justify-content: center;
+}
+
+.service-details-tabs .ant-tabs-content-holder {
+  padding-top: 24px;
+}

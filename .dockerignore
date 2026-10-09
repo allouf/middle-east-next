@@ -1,0 +1,11 @@
+.git
+.gitlab
+.next
+node_modules
+npm-debug.log*
+build_log.txt
+build_output.log
+tsc_log.txt
+tsc_output_stats.txt
+.env
+.env.*

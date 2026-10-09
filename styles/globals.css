@@ -1,0 +1,688 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"); */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical CSS for InputSearch - Load immediately to prevent layout shift */
+.input-search-placeholder {
+  max-width: 500px;
+  width: 100%;
+}
+
+.input-search-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .input-search-desktop {
+    display: block;
+  }
+  .input-search-mobile {
+    display: none;
+  }
+}
+
+.input-search-container {
+  border-radius: 0.75rem;
+  background-color: #8AB9AE;
+  border: none;
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-search-inner {
+  flex: 1;
+  background-color: #E6F0ED;
+  border-radius: 0 0.75rem 0.75rem 0;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+}
+
+/* RTL Support */
+[dir="rtl"] .input-search-inner {
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+/* Light Mode Variables */
+:root {
+  --SiteColor: #00664f;
+  --bgGray: #f8f8f8;
+  --bgWhite: #ffffff;
+  --bgOffWhite: #f4f7f6;
+  --blueLight: #e6f0ed;
+  --blueLightHover: #00664f33;
+  --blueIcons: #00664f;
+  --blueBtn: #00664f;
+  --blueSiteSecondary: #a0d6f8;
+  --blueSiteHover: #055542;
+  --textColor: #4d4d4d;
+  --textGrayColor: #747474;
+  --textWhiteColor: #ffff;
+  --subTitleColor: #323232;
+  --grayLight: #fafafa;
+  --grayLight2: #f9f9f9;
+  --darkbg: #002b21;
+  --grayBorder: #878585ff;
+  --clock-main: #00664f;
+  --clock-bg: #f3f4f6;
+  --lightGreen: #338572;
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: 6px;
+  scrollbar-color: #cbd5e1;
+  scrollbar-track-color: #f1f5f9;
+  scrollbar-thumb-color: #00664f;
+  scrollbar-thumb-border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #00664f;
+  border-radius: 3px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #055542;
+}
+
+/* Dark Mode Variables */
+.dark {
+  --SiteColor: #00664f;
+  --bgGray: #e6f0ed;
+  --bgWhite: #ffffff;
+  --bgOffWhite: #f4f7f6;
+  --blueLight: #e6f0ed;
+  --blueLightHover: #abcdfa;
+  --blueIcons: #00664f;
+  --blueBtn: #00664f;
+  --blueSiteSecondary: #a0d6f8;
+  --blueSiteHover: #055542;
+  --textColor: #747474;
+  --textGrayColor: #747474;
+  --textWhiteColor: #ffff;
+  --subTitleColor: #323232;
+  --grayLight: #fafafa;
+  --darkbg: #002b21;
+  --grayBorder: #878585ff;
+  --lightGreen: #338572;
+}
+@layer base {
+  html {
+    font-family: var(--font-somar), system-ui, sans-serif;
+  }
+}
+
+/* Global default (fallbacks included) */
+body {
+  font-family: "Somar Sans Regular", system-ui, sans-serif;
+}
+/* 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #00664f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1f325c;
+  border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #0f172a;
+} */
+/* body::-webkit-scrollbar {
+  height: 12px;
+}
+
+.dropDown::-webkit-scrollbar {
+  width: 6px;
+} */
+
+.dropDown::-webkit-scrollbar-track {
+  background: #c2c6ce;
+}
+
+.dropDown::-webkit-scrollbar-thumb {
+  background-color: #00664f;
+  border-radius: 6px;
+}
+
+.profileMenuScroll::-webkit-scrollbar-thumb:hover {
+  background-color: #00664f;
+}
+
+.profileMenuScroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.profileMenuScroll::-webkit-scrollbar-track {
+  background: #c2c6ce;
+}
+
+.profileMenuScroll::-webkit-scrollbar-thumb {
+  background-color: #00664f;
+  border-radius: 6px;
+}
+
+.dropDown::-webkit-scrollbar-thumb:hover {
+  background-color: #00664f;
+}
+
+.modalScroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalScroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalScroll::-webkit-scrollbar-thumb {
+  background-color: #00664f;
+  border-radius: 6px;
+}
+
+.modalScroll::-webkit-scrollbar-thumb:hover {
+  background-color: #00664f;
+}
+
+/* Arabic (AR) content */
+.ar {
+  font-family: "Somar Sans", sans-serif;
+  direction: rtl;
+}
+
+/* English (EN) content */
+.en {
+  font-family: "Somar Sans", sans-serif;
+  direction: ltr;
+}
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* src/index.css or global.css */
+.scrollbar-sky::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  height: 12px; /* 👈 Set scrollbar height here */
+}
+
+.scrollbar-sky::-webkit-scrollbar-track {
+  background: #0f172a; /* sky-100 */
+}
+
+.scrollbar-sky::-webkit-scrollbar-thumb {
+  background-color: #0f172a; /* sky-400 */
+  border-radius: 6px;
+}
+
+.scrollbar-sky::-webkit-scrollbar-thumb:hover {
+  background-color: #0f172a; /* sky-500 */
+}
+
+.leaflet-container {
+  z-index: 0 !important; /* Force override */
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(100%);
+  }
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.Toastify__toast {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+.Toastify__toast--success {
+  background: #25396f !important;
+  color: white !important;
+}
+
+/* Custom scrollbar styles */
+.scrollable-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* reels section  */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-in {
+  animation: slideInFromTop 0.2s ease-out forwards;
+}
+
+.slide-in-from-top-2 {
+  transform: translateY(-8px);
+  opacity: 0;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smooth scroll behavior */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.flag.sy {
+  background-image: url("/syriaFlag.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  transform: scale(1.4); /* ⬅️ scale flag by 1.5x */
+  transform-origin: center; /* keeps it centered */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Category Filter Scrollbar */
+.category-filter-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-filter-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.category-filter-scroll::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+.category-filter-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+.category-filter-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #f3f4f6;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* 🔹 Base bullets */
+.pagination-home-banner .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px; /* fully round */
+  transition: all 0.3s ease;
+  margin: 0 4px !important;
+}
+
+/* 🔹 Active bullet */
+.pagination-home-banner .swiper-pagination-bullet-active {
+  background-color: #191c1f !important;
+  width: 28px;
+  border-radius: 9999px;
+}
+
+/* 🔹 Responsive sizing (optional for smaller screens) */
+@media (max-width: 640px) {
+  .pagination-home-banner .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  .pagination-home-banner .swiper-pagination-bullet-active {
+    width: 22px;
+  }
+}
+
+.mini-banner-pagination .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  margin: 0 4px !important;
+}
+.mini-banner-pagination .swiper-pagination-bullet-active {
+  background-color: #fff !important;
+  width: 24px;
+  border-radius: 9999px;
+}
+
+/* 🔹 Bottom banner bullets (same style as screenshot) */
+.bottom-banner-pagination .swiper-pagination-bullet {
+  background-color: #d1d5db;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  margin: 0 4px !important;
+}
+
+.bottom-banner-pagination .swiper-pagination-bullet-active {
+  background-color: #ffffff !important;
+  width: 24px;
+  border-radius: 9999px;
+}
+.pac-container {
+  z-index: 2000 !important; /* higher than your modal or other elements */
+}
+
+/* Notification animation for stock limit */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+/* Antd overrides for Orders page (tailwind-first look) */
+@layer components {
+  .orders-antd .ant-card {
+    @apply bg-white shadow-sm border border-gray-200 rounded-xl;
+  }
+
+  .orders-antd .ant-card-body {
+    @apply p-4 md:p-6;
+  }
+
+  .orders-antd .ant-input,
+  .orders-antd .ant-select-selector {
+    @apply h-11 rounded-lg border border-gray-300 shadow-none;
+    box-shadow: none !important;
+  }
+
+  .orders-antd .ant-input:focus,
+  .orders-antd .ant-select-focused .ant-select-selector {
+    border-color: #00664f !important;
+    box-shadow: none !important;
+  }
+
+  .orders-antd .ant-select-selector {
+    padding: 0 12px !important;
+  }
+
+  .orders-antd .ant-select-selection-placeholder {
+    @apply text-gray-500;
+  }
+
+  .orders-antd .ant-table-wrapper {
+    @apply rounded-xl;
+  }
+
+  .orders-antd .ant-table-container {
+    @apply rounded-xl border border-gray-200;
+  }
+
+  .orders-antd .ant-table-thead > tr > th {
+    @apply bg-white text-gray-800 font-semibold text-sm;
+    color: #0f9d58;
+  }
+
+  .orders-antd .ant-table-tbody > tr > td {
+    @apply text-gray-800;
+  }
+
+  .orders-antd .ant-table-tbody > tr:hover > td {
+    @apply bg-gray-50;
+  }
+
+  .orders-antd .ant-tag {
+    @apply text-xs font-medium rounded-md px-3 py-1;
+    border: 0 !important;
+  }
+
+  .orders-antd .ant-btn-text {
+    @apply text-blue-700;
+  }
+
+  .orders-antd .ant-pagination {
+    @apply text-gray-700;
+  }
+
+  .orders-antd .ant-pagination-item-active {
+    border-color: #00664f !important;
+  }
+
+  .orders-antd .ant-pagination-item-active a {
+    color: #00664f !important;
+  }
+}
+::placeholder,
+textarea::placeholder {
+  color: #a1a5a5 !important;
+  opacity: 1; /* Ensure color is not faded */
+}
+
+.ant-input::placeholder,
+.ant-input-textarea::placeholder,
+.ant-select-selection-placeholder,
+.ant-picker-input input::placeholder {
+  color: #a1a5a5 !important;
+  opacity: 1;
+}
+
+#root a {
+  color: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
+.ant-picker-now-btn {
+  background-color: #00664f !important;
+  color: #fff !important;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+:where(.css-dev-only-do-not-override-8dvdfg).ant-picker-dropdown
+  .ant-picker-panel-rtl
+  .ant-picker-time-panel
+  .ant-picker-content
+  > * {
+  width: 4rem !important;
+}
+
+:where(.css-dev-only-do-not-override-8dvdfg).ant-picker-dropdown
+  .ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background-color: #00664f !important;
+  color: #fff !important;
+}
+
+:where(.ant-picker-dropdown)
+  .ant-picker-time-panel-column
+  > li:hover
+  .ant-picker-time-panel-cell-inner {
+  background-color: #00664f !important;
+  color: #fff !important;
+}
+
+/* Responsive DatePicker styles for small screens */
+@media (max-width: 640px) {
+  /* Make the picker input text fit on mobile */
+  .ant-picker {
+    font-size: 13px !important;
+  }
+
+  .ant-picker-input > input {
+    font-size: 13px !important;
+  }
+
+  /* Center the dropdown on mobile with fixed position */
+  .ant-picker-dropdown {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-width: 300px !important;
+    z-index: 9999 !important;
+  }
+
+  /* Stack date panel and time panel vertically on mobile */
+  .ant-picker-datetime-panel {
+    flex-direction: column !important;
+  }
+
+  .ant-picker-date-panel {
+    width: 100% !important;
+  }
+
+  /* Smaller calendar cells */
+  .ant-picker-cell {
+    padding: 1px 0 !important;
+    min-width: 28px !important;
+  }
+
+  .ant-picker-cell-inner {
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 26px !important;
+    font-size: 12px !important;
+  }
+
+  .ant-picker-content th {
+    font-size: 12px !important;
+    width: 28px !important;
+  }
+
+  .ant-picker-header {
+    padding: 0 4px !important;
+    font-size: 13px !important;
+  }
+
+  .ant-picker-body {
+    padding: 4px !important;
+  }
+
+  /* Compact time panel */
+  .ant-picker-time-panel {
+    width: 100% !important;
+    border-left: none !important;
+    border-inline-start: none !important;
+    border-top: 1px solid #f0f0f0 !important;
+  }
+
+  .ant-picker-time-panel .ant-picker-content {
+    display: flex !important;
+    justify-content: center !important;
+    height: 100px !important;
+  }
+
+  .ant-picker-time-panel-column {
+    width: 56px !important;
+  }
+
+  .ant-picker-time-panel-cell-inner {
+    font-size: 12px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+  }
+
+  /* Smaller footer buttons */
+  .ant-picker-footer {
+    padding: 4px 8px !important;
+  }
+
+  .ant-picker-ok button {
+    font-size: 12px !important;
+    padding: 2px 8px !important;
+    height: 26px !important;
+  }
+}

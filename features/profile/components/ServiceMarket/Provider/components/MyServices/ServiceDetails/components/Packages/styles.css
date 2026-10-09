@@ -1,0 +1,113 @@
+/* Service Details Tabs Styling */
+.packages-tabs .ant-tabs-nav {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+}
+
+.packages-tabs .ant-tabs-nav-wrap {
+    width: 100% !important;
+}
+
+.packages-tabs .ant-tabs-nav-list {
+    width: 100% !important;
+    display: flex !important;
+    gap: 0 !important;
+}
+
+.packages-tabs .ant-tabs-tab {
+    color: #64748B !important;
+    font-weight: 500;
+    padding: 20px;
+    transition: all 0.3s ease;
+    flex: 1 1 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important; /* remove space between tabs */
+    text-align: center;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* remove Ant Design default tab spacing */
+.packages-tabs .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 !important;
+}
+
+.packages-tabs .ant-tabs-tab-btn {
+    color: inherit;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .packages-tabs .ant-tabs-tab {
+        padding: 8px 6px;
+        font-size: 14px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.3;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .packages-tabs .ant-tabs-tab-btn {
+        font-size: 14px !important;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .packages-tabs .ant-tabs-tab {
+        padding: 6px 4px;
+        font-size: 12px;
+        min-height: 50px;
+    }
+
+    .packages-tabs .ant-tabs-tab-btn {
+        font-size: 12px !important;
+    }
+
+    .packages-tabs .ant-tabs-ink-bar {
+        height: 3px !important;
+    }
+}
+
+.packages-tabs .ant-tabs-tab:hover {
+    color: #00664F !important;
+      border-radius: 2px;
+    background: #00664E0D !important;
+}
+
+.packages-tabs .ant-tabs-tab.ant-tabs-tab-active {
+    color: #00664F !important;
+    background: #00664E0D !important;
+    font-weight: 600;
+}
+
+.packages-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #00664F !important;
+      border-radius: 2px;
+    font-weight: 600;
+}
+
+.packages-tabs .ant-tabs-ink-bar {
+    background: #00664F !important;
+    height: 4px !important;
+    border-radius: 2px;
+}
+
+.packages-tabs .ant-tabs-content-holder {
+    padding-top: 24px;
+}

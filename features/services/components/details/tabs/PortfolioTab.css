@@ -1,0 +1,10 @@
+.portfolio-select .ant-select-selector {
+    border-radius: 8px !important;
+    border-color: #E2E8F0 !important;
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.ant-segmented-item-selected {
+    color: #00664F !important; /* teal-700 equivalent */
+}

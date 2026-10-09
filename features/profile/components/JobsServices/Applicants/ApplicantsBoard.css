@@ -1,0 +1,29 @@
+/* Custom Scrollbar - hidden since we use custom nav bar */
+.kanban-board-container::-webkit-scrollbar {
+    height: 0px;
+    background-color: transparent;
+}
+
+.kanban-board-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Column scrollbar */
+.kanban-column::-webkit-scrollbar {
+    width: 4px;
+}
+
+.kanban-column::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.kanban-column::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 20px;
+}
+
+/* GPU-accelerate sortable items for smooth drag */
+.kanban-column [data-rfd-draggable-context-id],
+.kanban-column>div>div>div {
+    will-change: transform;
+}

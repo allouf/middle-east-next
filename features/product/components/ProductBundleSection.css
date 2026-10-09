@@ -1,0 +1,41 @@
+/* Hide scrollbar for ProductBundleSection */
+.bundle-container {
+  overflow: visible !important;
+  width: 100%;
+}
+
+.bundle-card-wrapper {
+  flex-shrink: 0;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .bundle-card-wrapper {
+    width: 250px !important;
+  }
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--SiteColor);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--blueSiteHover);
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--SiteColor) #f1f1f1;
+}

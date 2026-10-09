@@ -1,0 +1,29 @@
+.faq-collapse .ant-collapse-item {
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    .faq-collapse .ant-collapse-item-active {
+        border: 1px solid #E2E8F0 !important;
+    }
+    .faq-collapse .ant-collapse-header {
+        padding: 18px 24px !important;
+        align-items: center !important;
+        font-weight: 700;
+        color: #323232 !important;
+        font-size: 15px;
+        background-color: #ffffff;
+        transition: background-color 0.3s;
+    }
+    .faq-collapse .ant-collapse-item-active .ant-collapse-header {
+        background-color: #00664F33 !important; /* Matches the slightly green tinted color */
+        border-bottom: 1px solid #E2E8F0;
+    }
+    .faq-collapse .ant-collapse-content {
+        border-top: none !important;
+    }
+    .faq-collapse .ant-collapse-content-box {
+        padding: 24px !important;
+    }

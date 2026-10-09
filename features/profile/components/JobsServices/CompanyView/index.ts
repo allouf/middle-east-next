@@ -1,0 +1,1 @@
+export  {default as CompanyProfileTabs } from "./NotComplate/CompanyProfileTabs";
